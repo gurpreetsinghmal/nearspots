@@ -3,7 +3,7 @@
     <x-slot name="title">Home</x-slot>
     <div class="bg-gray-100">
         <div class="min-h-screen -mt-8 lg:-mt-12  flex flex-col items-center  sm:pt-0">
-            <div class="z-40 rounded w-4/5  grid grid-cols-1 col-auto md:grid-cols-3 lg:grid-cols-6 gap-2">
+            <div class="z-40 rounded w-4/5  grid grid-cols-1 col-auto md:grid-cols-3 lg:grid-cols-6 gap-1">
                 @php 
                 $a=array(1,2,3,4,5,6);
                 @endphp
