@@ -1,8 +1,8 @@
-<nav class="sticky top-0 z-50 p-3 mt-0 bg-white shadow md:flex md:items-center md:justify-between z-1 relative">
+<nav class="w-full mx-auto sticky top-0 z-50 p-3 mt-0 bg-white md:flex md:items-center md:justify-between z-1 relative">
     <div class="flex justify-between items-center ">
       <span class="text-2xl font-[Poppins] font-bold cursor-pointer">
         <img class="h-10 mr-2 inline"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Wikimedia-logo.png/480px-Wikimedia-logo.png">
+          src="https://www.svgrepo.com/show/491944/ui-color-2-chat-round.svg">
         NEAR<span class="text-pink-600">SPOTS</span>
       </span>
 
@@ -14,26 +14,26 @@
     </div>
 
     <ul class="md:flex md:items-center z-[999] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-2 md:pl-0 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 ">
-      <li class="mx-4 my-2 md:my-0 md:mx-1">
-       <a href="#" class="block px-3 py-2 rounded-md text-base text-slate-700 font-normal hover:bg-gray-900  hover:text-white duration-500">Home</a>
+      <li class="mx-1 my-2 md:my-0 md:mx-1">
+       <a href="#" class="block px-2 rounded-md text-base text-slate-700 font-sm hover:bg-gray-900  hover:text-white duration-500">Home</a>
       </li>
-      <li class="mx-4 my-2 md:my-0 md:mx-1">
-       <a href="#" class="block px-3 py-2 rounded-md text-base text-slate-700 font-normal hover:bg-gray-900  hover:text-white duration-500">About</a>
+      <li class="mx-1 my-2 md:my-0 md:mx-1">
+       <a href="#" class="block p-2 rounded-md text-base text-slate-700 font-sm hover:bg-gray-900  hover:text-white duration-500">About</a>
       </li>
-      <li class="mx-4 my-2 md:my-0 md:mx-1">
-       <a href="#" class="block px-3 py-2 rounded-md text-base text-slate-700 font-normal hover:bg-gray-900  hover:text-white duration-500">Contact</a>
+      <li class="mx-1 my-2 md:my-0 md:mx-1">
+       <a href="#" class="block p-2 rounded-md text-base text-slate-700 font-sm hover:bg-gray-900  hover:text-white duration-500">Contact</a>
       </li>
-      <li class="mx-4 my-2 md:my-0 md:mx-1">
-       <a href="#" class="block px-3 py-2 rounded-md text-base text-slate-700 font-normal hover:bg-gray-900  hover:text-white duration-500">demo</a>
+      <li class="mx-1 my-2 md:my-0 md:mx-1">
+       <a href="#" class="block p-2 rounded-md text-base text-slate-700 font-sm hover:bg-gray-900  hover:text-white duration-500">demo</a>
       </li>
-      <li class="mx-4 my-2 md:my-0 md:mx-1">
-       <a href="#" class="block px-3 py-2 rounded-md text-base text-slate-700 font-normal hover:bg-gray-900  hover:text-white duration-500">demo</a>
+      <li class="mx-1 my-2 md:my-0 md:mx-1">
+       <a href="#" class="block p-2 rounded-md text-base text-slate-700 font-sm hover:bg-gray-900  hover:text-white duration-500">demo</a>
       </li>
-      <li class="mx-4 my-2 md:my-0 md:mx-1">
-       <a href="#" class="block px-3 py-2 rounded-md text-base text-slate-700 font-normal hover:bg-gray-900  hover:text-white duration-500">demo</a>
+      <li class="mx-1 my-2 md:my-0 md:mx-1">
+       <a href="#" class="block p-2 rounded-md text-base text-slate-700 font-sm hover:bg-gray-900  hover:text-white duration-500">demo</a>
       </li>
-      <li class="mx-4 my-2 md:my-0 md:mx-1">
-       <a href="#" class="block px-3 py-2 rounded-md text-base text-slate-700 font-normal hover:bg-gray-900  hover:text-white duration-500">demo</a>
+      <li class="mx-1 my-2 md:my-0 md:mx-1">
+       <a href="#" class="block p-2 rounded-md text-base text-slate-700 font-sm hover:bg-gray-900  hover:text-white duration-500">demo</a>
       </li>
      
      
