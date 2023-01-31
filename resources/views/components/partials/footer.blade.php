@@ -15,7 +15,7 @@
                 <div class="py-1">demo</div>
                 <div class="py-1">demo</div>
                 <div class="py-1">demo</div>
-                <div class="py-1">demo1</div>
+                <div class="py-1">demo</div>
             </div>
         </div>
         <div class="w-full md:w-1/4 p-3">
