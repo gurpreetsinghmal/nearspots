@@ -19,7 +19,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
+    @livewireStyles
 </head>
 
 <body class="font-poppins">
@@ -30,7 +30,7 @@
     </div>
 
     <x-partials.footer/>
-
+    @livewireScripts
 </body>
 
 </html>

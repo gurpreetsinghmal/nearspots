@@ -15,7 +15,7 @@
 
     <ul class="md:flex md:items-center z-[999] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-2 md:pl-0 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 ">
       <li class="mx-1 my-2 md:my-0 md:mx-1">
-       <a href="#" class="block px-2 rounded-md text-base text-slate-700 font-sm hover:bg-gray-900  hover:text-white duration-500">Home</a>
+       <a href="#" class="block p-2 rounded-md text-base text-slate-700 font-sm hover:bg-gray-900  hover:text-white duration-500">Home</a>
       </li>
       <li class="mx-1 my-2 md:my-0 md:mx-1">
        <a href="#" class="block p-2 rounded-md text-base text-slate-700 font-sm hover:bg-gray-900  hover:text-white duration-500">About</a>

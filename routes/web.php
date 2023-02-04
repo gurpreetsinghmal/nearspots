@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/',[HomeController::class,'index']);
+Route::get('/categories',[HomeController::class,'getcategories']);
+// Route::get('/categories/',[HomeController::class,'getcategories']);
+// Route::get('/categories/{}/{}',[HomeController::class,'getcategories']);
+
+
 Route::get('/policy', function () {
     $policy="test";
     $data=compact('policy');

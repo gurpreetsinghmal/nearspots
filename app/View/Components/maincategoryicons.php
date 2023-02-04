@@ -4,12 +4,12 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class btncategories extends Component
+class maincategoryicons extends Component
 {
-    public $link;
-    public function __construct($link)
+    public $list;
+    public function __construct($list)
     {
-        $this->link=$link;
+        $this->list=$list;
     }
 
     /**
@@ -19,6 +19,7 @@ class btncategories extends Component
      */
     public function render()
     {
-        return view('components.btn-categories');
+       
+        return view('components.maincategoryicons',["list"=>$this->list]);
     }
 }
