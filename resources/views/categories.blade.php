@@ -7,7 +7,7 @@
             <x-maincategoryicons :list="$list" />
 
             <livewire:filter-search />
-            
+            <livewire:filter-listing/>
            
         </div>
     </div>
