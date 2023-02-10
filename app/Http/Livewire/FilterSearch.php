@@ -85,14 +85,14 @@ class FilterSearch extends Component
         if($this->selstate==null)
         { 
         $this->selcity=null;
-        $this->selstate=21;
-        $query=Shop::WhereIn('state_id',[$this->selstate])->whereIn('category_id',$this->filtercategory)->WhereIn('subcategory_id',$this->filtersubcategory)
+        
+        $query=Shop::whereIn('category_id',$this->filtercategory)->WhereIn('subcategory_id',$this->filtersubcategory)
         ->paginate($item_per_page);
         
         }
         elseif($this->selcity==null)
-        {   $this->selcity=2;
-            $query=Shop::WhereIn('state_id',[$this->selstate])->whereIn('category_id',$this->filtercategory)->WhereIn('subcategory_id',$this->filtersubcategory)
+        {  
+          $query=Shop::WhereIn('state_id',[$this->selstate])->whereIn('category_id',$this->filtercategory)->WhereIn('subcategory_id',$this->filtersubcategory)
         ->paginate($item_per_page);
          }
         else
