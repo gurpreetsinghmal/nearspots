@@ -25,7 +25,7 @@
 <body class="font-poppins">
     <x-partials.header />
 
-    <div class="bg-red-200">
+    <div>
         {{ $slot }}
     </div>
 

@@ -1,9 +1,9 @@
 <x-guest-layout>
-    <x-bigbanner title="Find the Best Businesses in Mansa"
+    <x-bigbanner class="h-96 lg:h-full" title="Find the Best Businesses in Mansa"
      subtitle="Browse our top categories and locations."/>
     <x-slot name="title">Home</x-slot>
     <div class="bg-gray-100">
-        <div class="min-h-screen -mt-8  flex flex-col items-center  sm:pt-0">
+        <div class="min-h-screen -mt-8 flex flex-col items-center  sm:pt-0">
            
             <x-maincategoryicons :list="$list" />
 

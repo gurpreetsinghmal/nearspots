@@ -3,33 +3,42 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Subcategory;
 
 class HomeController extends Controller
 {
-    public $list=[
-        "main-cat-1"=>"icons",
-        "main-cat-2"=>"icons",
-        "main-cat-3"=>"icons",
-        "main-cat-4"=>"icons",
-        "main-cat-5"=>"icons",
-        "main-cat-6"=>"icons",
-    ],
-    $sublist=[
-        "sub-cat-1"=>"icons",
-        "sub-cat-2"=>"icons",
-        "sub-cat-3"=>"icons",
-        "sub-cat-4"=>"icons",
-        "sub-cat-5"=>"icons",
-        "sub-cat-6"=>"icons",
-    ];
-    public function index(){
-        
+    public $list=[];
 
+   
+    public function index(){
+        $this->list=Category::all()->take(6);
         return view('home',["list"=>$this->list]);
     }
-
-    public function getcategories(){
+    
+    public function getallcategories()
+    {
+        $topic='Categories';
+        $list=Category::all()->take(6);
+        $level=0;   
         
-        return view('categories',["list"=>$this->list]);
+        return view('categories',["list"=>$list,"topic"=>$topic,'cat'=>null,'subcat'=>null,"level"=>$level]);
     }
+
+    public function getmaincategories($cat=null){
+        $topic=$cat;
+        $f=Category::where('category_name','LIKE','%'.$cat.'%')->get();
+        $list=Subcategory::where('category_id','=',$f[0]->id)->get()->take(6);      
+        $level=1;    
+        return view('categories',["list"=>$list,"topic"=>$topic,'cat'=> $cat,'subcat'=>null,"level"=>$level]);
+    }
+
+    public function getsubcategories($cat=null,$subcat=null){
+        $list=[];
+        $topic=$subcat;
+        $level=2; 
+        return view('categories',["list"=>$list,"topic"=>$topic,'cat'=> $cat,'subcat'=> $subcat,"level"=>$level]);
+    }
+
+  
 }

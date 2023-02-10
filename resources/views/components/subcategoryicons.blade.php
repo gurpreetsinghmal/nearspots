@@ -1,7 +1,7 @@
 <div class="z-40 rounded w-4/5 lg:-mt-2  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 lg:gap-1">
-  
+
     @foreach($list as $data)
-    <a href="/categories/{{$data->category_name}}">
+    <a href="/categories/{{$cat}}/{{$data->subcat_name}}">
     <div class="relative hover:-mt-2 hover:cursor-pointer hover:text-white text-center rounded-lg  transition-all duration-300">
         <div class=" bg-white hover:bg-red-500 p-0.5  rounded-lg">
             <div class="w-full flex flex-col items-center justify-center rounded-lg bg-rose-100">
@@ -37,7 +37,7 @@
                     </g>
                 </svg>
             </div> <!-- <img  class=" w-full object-contain rounded-lg p-1" src="https://img.freepik.com/free-vector/vector-cartoon-illustration-traditional-set-fast-food-meal_1441-331.jpg?w=740&t=st=1675011802~exp=1675012402~hmac=71d910620f579650681d817783c0e41e01cb6beb66dc9df0a9087fc1f9e82512" /> -->
-            <div class="text-xs py-1">{{$data->category_name}}</div>
+            <div class="text-xs py-1">{{$data->subcat_name}}</div>
         </div>
     </div>
     </a>

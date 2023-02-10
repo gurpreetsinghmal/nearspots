@@ -1,7 +1,8 @@
-<div class="h-content w-full relative flex items-center justify-center ">
-  
-    <img class=" h-96 md:h-max object-cover w-full " src="https://directoryhub.alphastir.com/laravel_project/public/storage/customization/innerpage-header-2022-06-22-62b2ff530903d1.jpg" />
+<div
+ {{ $attributes->merge(['class' => 'h-content w-full relative flex items-center justify-center ']) }}>
 
+  
+    <img class="object-cover  md:w-full h-full " src="https://directoryhub.alphastir.com/laravel_project/public/storage/customization/innerpage-header-2022-06-22-62b2ff530903d1.jpg" />
 
     <div class="absolute bg-black/50 h-full w-full">
         <div class="relative text-center  h-full flex flex-col items-center justify-center">

@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class,'index']);
-Route::get('/categories',[HomeController::class,'getcategories']);
+Route::get('/categories',[HomeController::class,'getallcategories'])->name('getallcategory');
+Route::get('/categories/{cat?}/',[HomeController::class,'getmaincategories']);
+Route::get('/categories/{cat?}/{subcat?}',[HomeController::class,'getsubcategories']);
+
 // Route::get('/categories/',[HomeController::class,'getcategories']);
 // Route::get('/categories/{}/{}',[HomeController::class,'getcategories']);
 

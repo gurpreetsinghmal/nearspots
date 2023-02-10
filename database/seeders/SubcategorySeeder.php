@@ -20,9 +20,9 @@ class SubcategorySeeder extends Seeder
         array("subcat_name"=>"Food","category_id"=>1),
         array("subcat_name"=>"Burger","category_id"=>1),
         array("subcat_name"=>"Pizza","category_id"=>1),
-        array("subcat_name"=>"Local Service","category_id"=>1),
-        array("subcat_name"=>"Health and Medical","category_id"=>1),
-        array("subcat_name"=>"Professional Service","category_id"=>1)
+        array("subcat_name"=>"Tops","category_id"=>2),
+        array("subcat_name"=>"Coats","category_id"=>2),
+        array("subcat_name"=>"Jeans","category_id"=>2)
        );
 
         Subcategory::insert($data);
