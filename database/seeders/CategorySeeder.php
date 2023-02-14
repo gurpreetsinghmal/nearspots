@@ -18,12 +18,12 @@ class CategorySeeder extends Seeder
     {
         DB::table('categories')->delete();
         $data = array(
-        array("category_name"=>"Restaurent"),
-        array("category_name"=>"Shopping"),
-        array("category_name"=>"Real State"),
-        array("category_name"=>"Local Service"),
-        array("category_name"=>"Health and Medical"),
-        array("category_name"=>"Professional Service"),
+        array("category_name"=>"Restaurent","slug_name"=>"Restaurent"),
+        array("category_name"=>"Shopping","slug_name"=>"Shopping"),
+        array("category_name"=>"Real State","slug_name"=>"Real-State"),
+        array("category_name"=>"Local Service","slug_name"=>"Local-Service"),
+        array("category_name"=>"Health and Medical","slug_name"=>"Health-and-Medical"),
+        array("category_name"=>"Professional Service","slug_name"=>"Professional-Service"),
        );
 
         Category::insert($data);

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
             $table->string('name',255);
+            $table->string('slug_name',255);
             $table->unsignedBigInteger('state_id');
             $table->foreign('state_id')->references('id')->on('states')->onDelete('restrict');
             $table->timestamps();

@@ -19,7 +19,7 @@ Route::get('/categories',[HomeController::class,'getallcategories'])->name('geta
 Route::get('/categories/{cat?}/',[HomeController::class,'getmaincategories']);
 Route::get('/categories/{cat?}/{subcat?}',[HomeController::class,'getsubcategories']);
 
-// Route::get('/categories/',[HomeController::class,'getcategories']);
+ Route::get('/profile/{shop}',[HomeController::class,'getprofile']);
 // Route::get('/categories/{}/{}',[HomeController::class,'getcategories']);
 
 

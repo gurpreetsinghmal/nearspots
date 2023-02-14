@@ -1,8 +1,8 @@
-<div class="z-40 rounded w-4/5 lg:-mt-2  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 lg:gap-1">
+<div class="z-40 rounded w-4/5 lg:-mt-8  grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 lg:gap-1">
   
     @foreach($list as $data)
-    <a href="/categories/{{$data->category_name}}">
-    <div class="relative hover:-mt-2 hover:cursor-pointer hover:text-white text-center rounded-lg  transition-all duration-300">
+    <a href="/categories/{{$data->slug_name}} ">
+    <div class="relative hover:-mt-4 hover:cursor-pointer hover:text-white text-center rounded-lg  transition-all duration-300">
         <div class=" bg-white hover:bg-red-500 p-0.5  rounded-lg">
             <div class="w-full flex flex-col items-center justify-center rounded-lg bg-rose-100">
                 <svg class="w-1/2 m-2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\Subcategory;
+use App\Models\State;
 use App\Models\City;
 
 class Shop extends Model
@@ -20,7 +21,8 @@ class Shop extends Model
         'category_id',
         'subcategory_id',
         'state_id',
-        'city_id'
+        'city_id',
+        'slug_name'
 
     ];
 
@@ -31,6 +33,10 @@ class Shop extends Model
     public function subcategory()
     {
      return $this->belongsTo(Subcategory::class);
+    }
+    public function state()
+    {
+     return $this->belongsTo(State::class);
     }
     
     public function city()

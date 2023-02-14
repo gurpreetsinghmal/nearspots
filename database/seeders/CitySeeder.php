@@ -18,8 +18,8 @@ class CitySeeder extends Seeder
     {
         DB::table('cities')->delete();
         $data=array(
-            array("name"=>"Mansa","state_id"=>21),
-            array("name"=>"Barnala","state_id"=>21),
+            array("name"=>"Mansa","state_id"=>21,"slug_name"=>"Mansa"),
+            array("name"=>"Barnala","state_id"=>21,"slug_name"=>"Barnala"),
         );
         City::insert($data);
     }
