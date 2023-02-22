@@ -479,7 +479,7 @@
                             <div class="py-4 font-semibold">
                                 Reviews
                             </div>
-                            <div>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
                                 <div class="flex mb-4">
                                     <div class="w-30">
                                         <img src={{$shop->banner}} class="p-2 w-24 h-24 rounded-full" />
