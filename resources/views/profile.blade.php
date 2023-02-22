@@ -204,12 +204,11 @@
                 <div class="mt-4 flex flex-col md:flex-row">
                     <div class="flex-1 mr-2 mb-4">
                         {{-- 5 gallery images --}}
-
                         <div>
                             <div class="py-4 font-semibold">
                                 Gallery
                             </div>
-                            <div class="flex flex-wrap pb-2 border-b-2">
+                            <div class="flex flex-wrap pb-4 border-b-2">
                                 @php $a=array(1,2,3,4,5) @endphp
                                 @foreach ($a as $i)
                                 <img class="rounded flex-1 m-1 w-48" src="https://picsum.photos/id/{{$i+237}}/400/300" />
@@ -217,24 +216,332 @@
                             </div>
                         </div>
 
+                        {{-- youtube video --}}
                         <div>
                             <div class="py-4 font-semibold">
                                 Video
                             </div>
-                            <div>
+                            <div class="flex flex-wrap pb-4 border-b-2">
                                 <iframe class="w-full h-72 md:h-96 rounded" src="https://www.youtube.com/embed/glMLsIn5ONc?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
                         </div>
+
+                        {{-- Description --}}
                         <div>
                             <div class="py-4 font-semibold">
                                 Description
                             </div>
-                            <div class="text-sm text-justify">
+                            <div class="text-sm text-justify pb-4 border-b-2">
                                 {{$shop->short_description}}
                             </div>
                         </div>
 
+                        {{-- Map --}}
+                        <div>
+                            <div class="py-4 font-semibold">
+                                Location
+                            </div>
+                            <div class="text-sm text-justify ">
+                                <div id="dvMap" wire:ignore class="rounded-lg my-2 h-24">
+                                </div>
+
+                                <script type="text/javascript">
+                                    var markers = [];
+
+                                    var person = {
+                                        "title": "{{$shop->name}}"
+                                        , "lat": "{{$shop->lat}}"
+                                        , "lng": "{{$shop->lng}}"
+                                        , "img": "{{$shop->banner??$placeholder}}"
+                                        , "description": '{{$shop->name}}'
+                                    };
+                                    markers.push(person);
+
+
+
+                                    var popdata = [];
+                                    var map;
+                                    var marker = [];
+
+                                    function pop(i) {
+                                        for (var h = 0; h < markers.length; h++) {
+                                            popdata[h].close(map, marker[h]);
+                                        }
+                                        popdata[i].open(map, marker[i]);
+
+                                    }
+
+                                    function LoadMap() {
+                                        var mapOptions = {
+                                            center: new google.maps.LatLng(markers[0].lat, markers[0].lng)
+                                            , minZoom: 5
+                                            , maxZoom: 10
+                                            , zoom: 8
+                                            , mapTypeId: google.maps.MapTypeId.ROADMAP
+                                        };
+                                        var bounds = new google.maps.LatLngBounds();
+                                        for (i = 0; i < markers.length; i++) {
+                                            position = new google.maps.LatLng(markers[i].lat, markers[i].lng);
+                                            bounds.extend(position);
+                                        }
+
+
+                                        map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+
+                                        map.fitBounds(bounds);
+
+                                        //Create and open InfoWindow.
+
+                                        for (var i = 0; i < markers.length; i++) {
+                                            var infowindow = new google.maps.InfoWindow();
+                                            var data = markers[i];
+
+                                            var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+                                            marker[i] = new google.maps.Marker({
+                                                position: myLatlng
+                                                , map: map
+                                                , title: data.title
+                                            });
+
+
+                                            //Attach click event to the marker.
+                                            (function(marker, data, i) {
+                                                google.maps.event.addListener(marker[i], "click", function(e) {
+                                                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                                                    infowindow.setContent("<div><img style='object-fit:contain;width:100% ;height:100px' alt='noimg' src='" + data.img + "' /><div style = 'width:200px;min-height:40px;text-align:justify;padding:3px'>" + data.description + "</div>");
+
+                                                    infowindow.open(map, marker[i]);
+                                                });
+                                            })(marker, data, i);
+                                            infowindow.setContent("<div><img style='object-fit:contain;width:100%;height:100px' alt='noimg' src='" + data.img + "' /><div style = 'width:200px;min-height:40px;text-align:justify;padding:3px'>" + data.description + "</div>");
+                                            popdata[i] = infowindow;
+                                        }
+                                    }
+
+                                </script>
+                                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTOP0SjF8I8QIdGDv6wINnJ06De8dJDlI&callback=LoadMap">
+                                </script>
+                                <style>
+                                    #dvMap {
+                                        position: -webkit-sticky;
+                                        position: sticky !important;
+                                        top: 70px;
+                                        width: 100%;
+                                        height: 50vh;
+                                    }
+
+                                </style>
+
+                            </div>
+                            <div class="py-4 border-b-2 flex justify-between">
+                                <div class="text-sm">
+                                    {{$shop->address}}
+                                </div>
+                                <a class="text-white border-2 border-rose-500 bg-rose-500 hover:border-2  hover:bg-white hover:text-rose-500 p-1  rounded flex items-center justify-center" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination={{$shop->lat}},{{$shop->lng}}">
+                                    <div>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                            <path fill-rule="evenodd" d="M8.157 2.175a1.5 1.5 0 00-1.147 0l-4.084 1.69A1.5 1.5 0 002 5.251v10.877a1.5 1.5 0 002.074 1.386l3.51-1.453 4.26 1.763a1.5 1.5 0 001.146 0l4.083-1.69A1.5 1.5 0 0018 14.748V3.873a1.5 1.5 0 00-2.073-1.386l-3.51 1.452-4.26-1.763zM7.58 5a.75.75 0 01.75.75v6.5a.75.75 0 01-1.5 0v-6.5A.75.75 0 017.58 5zm5.59 2.75a.75.75 0 00-1.5 0v6.5a.75.75 0 001.5 0v-6.5z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <div class="px-2">Get Directions</div>
+
+
+                                </a>
+                            </div>
+
+
+                        </div>
+
+                        {{-- Features --}}
+                        <div>
+                            <div class="pb-4 border-b-2">
+                                <div class="py-4 font-semibold">
+                                    Features
+                                </div>
+                                <div class="overflow-x-auto  shadow-md sm:rounded-lg">
+                                    <table class=" w-full text-sm text-left text-gray-500 ">
+
+                                        <tbody>
+                                            <tr class="bg-white border-b w-full hover:bg-gray-50">
+                                                <td scope="row" class="w-1/3 px-2 py-2  text-gray-900 whitespace-nowrap ">
+                                                    Price Range
+                                                </td>
+                                                <td class="px-2 py-4 ">
+                                                    $
+                                                </td>
+
+                                            </tr>
+                                            <tr class="bg-white border-b hover:bg-gray-50">
+                                                <td scope="row" class="px-2 py-2  text-gray-900 whitespace-nowrap ">
+                                                    General Features
+                                                </td>
+                                                <td class="px-2 py-4 ">
+                                                    $
+                                                </td>
+
+                                            </tr>
+                                            <tr class="bg-white border-b hover:bg-gray-50">
+                                                <td scope="row" class="px-2 py-2  text-gray-900 whitespace-nowrap ">
+                                                    Official Website
+                                                </td>
+                                                <td class="px-2 py-4 ">
+                                                    $
+                                                </td>
+
+                                            </tr>
+                                            <tr class="bg-white border-b hover:bg-gray-50">
+                                                <td scope="row" class="px-2 py-2  text-gray-900 whitespace-nowrap ">
+                                                    Parking
+                                                </td>
+                                                <td class="px-2 py-4 ">
+                                                    $
+                                                </td>
+
+                                            </tr>
+                                            <tr class="bg-white border-b hover:bg-gray-50">
+                                                <td scope="row" class="px-2 py-2  text-gray-900 whitespace-nowrap ">
+                                                    Wifi
+                                                </td>
+                                                <td class="px-2 py-4 ">
+                                                    $
+                                                </td>
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Ratings --}}
+                        <div>
+                            <div class="py-4 font-semibold">
+                                Ratings
+                            </div>
+                            <div class="flex flex-wrap pb-4 border-b-2">
+                                <div class="h-36 w-full mb-2 md:w-48 rounded flex flex-col items-center justify-center text-white bg-rose-500">
+                                    <div class="pb-1 text-center text-4xl">3.5</div>
+                                    <div class="pb-1 text-center text-xs"> Based on </div>
+                                    <div class="pb-1 text-center text-xs"> 55 Reviews </div>
+                                </div>
+                                <div class="flex-1 px-4">
+                                    <div class="flex ">
+                                        <div class="flex-1 items-center ">
+                                            <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
+                                                <div class="bg-green-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2 text-xs">5 Star</div>
+                                    </div>
+                                    <div class="flex ">
+                                        <div class="flex-1 items-center ">
+                                            <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
+                                                <div class="bg-blue-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2 text-xs">4 Star</div>
+                                    </div>
+                                    <div class="flex ">
+                                        <div class="flex-1 items-center ">
+                                            <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
+                                                <div class="bg-yellow-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2 text-xs">3 Star</div>
+                                    </div>
+                                    <div class="flex ">
+                                        <div class="flex-1 items-center ">
+                                            <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
+                                                <div class="bg-indigo-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2 text-xs">2 Star</div>
+                                    </div>
+                                    <div class="flex ">
+                                        <div class="flex-1 items-center ">
+                                            <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
+                                                <div class="bg-rose-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="p-2 text-xs">1 Star</div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {{-- Reviews --}}
+                        <div>
+                            <div class="py-4 font-semibold">
+                                Reviews
+                            </div>
+                            <div>
+                                <div class="flex mb-4">
+                                    <div class="w-30">
+                                        <img src={{$shop->banner}} class="p-2 w-24 h-24 rounded-full" />
+                                    </div>
+                                    <div class="flex-1 px-2">
+                                        <div class="font-semibold py-1">Rohan Singh
+                                            <span class="text-gray-400 font-normal text-sm">- 3 min ago
+                                            </span></div>
+                                        <div class="text-justify text-xs">
+                                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <div class="w-30">
+                                        <img src={{$shop->banner}} class="w-24 p-2 h-24 rounded-full" />
+                                    </div>
+                                    <div class="flex-1 px-2">
+                                        <div class="font-semibold py-1">Rohan Singh
+                                            <span class="text-gray-400 font-normal text-sm">- 3 min ago
+                                            </span></div>
+                                        <div class="text-justify text-xs">
+                                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <div class="w-30">
+                                        <img src={{$shop->banner}} class="p-2 w-24 h-24 rounded-full" />
+                                    </div>
+                                    <div class="flex-1 px-2">
+                                        <div class="font-semibold py-1">Rohan Singh
+                                            <span class="text-gray-400 font-normal text-sm">- 3 min ago
+                                            </span></div>
+                                        <div class="text-justify text-xs">
+                                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <div class="w-30">
+                                        <img src={{$shop->banner}} class="w-24 p-2 h-24 rounded-full" />
+                                    </div>
+                                    <div class="flex-1 px-2">
+                                        <div class="font-semibold py-1">Rohan Singh
+                                            <span class="text-gray-400 font-normal text-sm">- 3 min ago
+                                            </span></div>
+                                        <div class="text-justify text-xs">
+                                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
+
+
                     {{-- right pannel  --}}
                     <div class="md:w-1/3 lg:w-1/4">
                         <div class="text-center">Opening Hours</div>
@@ -247,6 +554,7 @@
                             <div class="text-justify text-sm pl-2">Closed since Sunday 23:30. It will re-open at Tuesday 06:00.
                             </div>
                         </div>
+                        {{--table--}}
                         <div>
 
                             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -331,9 +639,31 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
+
+    <!-- near by listings -->
+   <div class="bg-white pt-8 ">
+        <div class="flex flex-col items-center  sm:pt-0">
+          <x-nearbylisting />
+        </div>
+    </div>
+    <!-- listings -->
+   <div class="bg-white pt-8 ">
+        <div class="flex flex-col items-center  sm:pt-0">
+          <x-listings />
+        </div>
+    </div>
+     <!-- Recent -->
+    <div class="bg-gray-50">
+        <div class=" pt-8 flex flex-col items-center  sm:pt-0">
+          <x-recentlisting />
+        </div>
+    </div>
+   
 
 
 </x-guest-layout>
