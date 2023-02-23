@@ -1,4 +1,4 @@
-<div class="my-6 bg-white w-full my-2">
+<div class="my-6 bg-white w-full ">
     <!-- listing title -->
     <div class="text-center my-4">
         <div class="font-medium text-2xl text-red-500 p-3">Nearby Listings</div>

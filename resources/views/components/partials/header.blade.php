@@ -1,4 +1,4 @@
-<nav class="w-full mx-auto sticky top-0 z-50 p-3 mt-0 bg-white md:flex md:items-center md:justify-between z-1 relative">
+<nav class="w-full mx-auto sticky top-0 z-50 p-3 mt-0 bg-white md:flex md:items-center md:justify-between z-1 ">
     <div class="flex justify-between items-center ">
       <span class="text-2xl font-[Poppins] font-bold cursor-pointer">
         <img class="h-10 mr-2 inline"

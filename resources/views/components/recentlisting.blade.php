@@ -1,4 +1,4 @@
-<div class="my-6  w-4/5 my-2">
+<div class="my-6  w-4/5 ">
     <!-- listing title -->
     <div class="w-fit">
         <div class="font-medium text-2xl text-red-500">
