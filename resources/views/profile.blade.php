@@ -173,7 +173,7 @@
                                         <svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                                         </svg>
-                                        <a href="/categories/{{$shop->state->name}}" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">{{$shop->state->name}}</a>
+                                        <a href="/categories/{{$shop->category->name}}" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">{{$shop->state->name}}</a>
                                     </div>
                                 </span>
 
@@ -202,6 +202,7 @@
                 </div>
 
                 <div class="mt-4 flex flex-col md:flex-row">
+                    {{-- -- left pannel  -- --}}
                     <div class="flex-1 mr-2 mb-4">
                         {{-- 5 gallery images --}}
                         <div>
@@ -430,34 +431,27 @@
                                     <div class="flex ">
                                         <div class="flex-1 items-center ">
                                             <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
-                                                <div class="bg-green-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
+                                                <div class="bg-rose-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
                                             </div>
                                         </div>
-                                        <div class="p-2 text-xs">5 Star</div>
-                                    </div>
-                                    <div class="flex ">
-                                        <div class="flex-1 items-center ">
-                                            <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
-                                                <div class="bg-blue-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
-                                            </div>
+                                        <div class="pl-2 text-xs flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+
                                         </div>
-                                        <div class="p-2 text-xs">4 Star</div>
-                                    </div>
-                                    <div class="flex ">
-                                        <div class="flex-1 items-center ">
-                                            <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
-                                                <div class="bg-yellow-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
-                                            </div>
-                                        </div>
-                                        <div class="p-2 text-xs">3 Star</div>
-                                    </div>
-                                    <div class="flex ">
-                                        <div class="flex-1 items-center ">
-                                            <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
-                                                <div class="bg-indigo-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
-                                            </div>
-                                        </div>
-                                        <div class="p-2 text-xs">2 Star</div>
                                     </div>
                                     <div class="flex ">
                                         <div class="flex-1 items-center ">
@@ -465,7 +459,105 @@
                                                 <div class="bg-rose-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
                                             </div>
                                         </div>
-                                        <div class="p-2 text-xs">1 Star</div>
+                                        <div class="pl-2 text-xs flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-transparent">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                    <div class="flex ">
+                                        <div class="flex-1 items-center ">
+                                            <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
+                                                <div class="bg-rose-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
+                                            </div>
+                                        </div>
+                                         <div class="pl-2 text-xs flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            
+
+                                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-transparent">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-transparent">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="flex ">
+                                        <div class="flex-1 items-center ">
+                                            <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
+                                                <div class="bg-rose-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-2 text-xs flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-transparent">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-transparent">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-transparent">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="flex ">
+                                        <div class="flex-1 items-center ">
+                                            <div class=" bg-gray-200 rounded-full h-2.5 my-2 dark:bg-gray-700">
+                                                <div class="bg-rose-600 h-2.5 items-center rounded-full dark:bg-gray-300" style="width: {{rand(1,90)}}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-2 text-xs flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-rose-500">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-transparent">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-transparent">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-transparent">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-transparent">
+                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+                                            </svg>
+
+
+                                        </div>
                                     </div>
 
 
@@ -481,8 +573,8 @@
                             </div>
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
                                 <div class="flex mb-4">
-                                    <div class="w-30">
-                                        <img src={{$shop->banner}} class="p-2 w-24 h-24 rounded-full" />
+                                    <div class="w-16">
+                                        <img src={{$shop->banner}} class="p-2 w-16 h-16 rounded-full" />
                                     </div>
                                     <div class="flex-1 px-2">
                                         <div class="font-semibold py-1">Rohan Singh
@@ -495,8 +587,8 @@
                                     </div>
                                 </div>
                                 <div class="flex mb-4">
-                                    <div class="w-30">
-                                        <img src={{$shop->banner}} class="w-24 p-2 h-24 rounded-full" />
+                                    <div class="w-16">
+                                        <img src={{$shop->banner}} class="p-2 w-16 h-16 rounded-full" />
                                     </div>
                                     <div class="flex-1 px-2">
                                         <div class="font-semibold py-1">Rohan Singh
@@ -509,8 +601,8 @@
                                     </div>
                                 </div>
                                 <div class="flex mb-4">
-                                    <div class="w-30">
-                                        <img src={{$shop->banner}} class="p-2 w-24 h-24 rounded-full" />
+                                    <div class="w-16">
+                                        <img src={{$shop->banner}} class="p-2 w-16 h-16 rounded-full" />
                                     </div>
                                     <div class="flex-1 px-2">
                                         <div class="font-semibold py-1">Rohan Singh
@@ -523,8 +615,8 @@
                                     </div>
                                 </div>
                                 <div class="flex mb-4">
-                                    <div class="w-30">
-                                        <img src={{$shop->banner}} class="w-24 p-2 h-24 rounded-full" />
+                                    <div class="w-16">
+                                        <img src={{$shop->banner}} class="p-2 w-16 h-16 rounded-full" />
                                     </div>
                                     <div class="flex-1 px-2">
                                         <div class="font-semibold py-1">Rohan Singh
@@ -536,6 +628,21 @@
 
                                     </div>
                                 </div>
+                                <div class="flex mb-4">
+                                    <div class="w-16">
+                                        <img src={{$shop->banner}} class="p-2 w-16 h-16 rounded-full" />
+                                    </div>
+                                    <div class="flex-1 px-2">
+                                        <div class="font-semibold py-1">Rohan Singh
+                                            <span class="text-gray-400 font-normal text-sm">- 3 min ago
+                                            </span></div>
+                                        <div class="text-justify text-xs">
+                                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                                        </div>
+
+                                    </div>
+                                </div>
+                               
 
                             </div>
                         </div>
@@ -543,8 +650,8 @@
 
 
                     {{-- right pannel  --}}
-                    <div class="md:w-1/3 lg:w-1/4">
-                        <div class="text-center">Opening Hours</div>
+                    <div class="md:w-1/3 mt-4 lg:w-1/4">
+                        <div class="text-center py-1">Opening Hours</div>
                         <div class="my-2 p-2 bg-orange-200 rounded-lg flex items-center">
                             <div class="w-10 h-10">
                                 <svg aria-hidden="true" fill="currentColor" class="fill-orange-700" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -631,10 +738,10 @@
                         </div>
                         {{-- manager --}}
                         <div class="my-4">
-                            <div>Owner</div>
+                            <div class="py-2 px-1">Owner</div>
                             <div class="flex items-center">
                                 <div><img class="w-12 h-12 rounded-full p-1" src="{{$shop->banner}}" /></div>
-                                <div>{{$shop->owner}}</div>
+                                <div class="px-2">{{$shop->owner}}</div>
                             </div>
                         </div>
                     </div>
@@ -646,24 +753,24 @@
     </div>
 
     <!-- near by listings -->
-   <div class="bg-white pt-8 ">
+    <div class="bg-white pt-8 ">
         <div class="flex flex-col items-center  sm:pt-0">
-          <x-nearbylisting />
+            <x-nearbylisting />
         </div>
     </div>
     <!-- listings -->
-   <div class="bg-white pt-8 ">
+    <div class="bg-white pt-8 ">
         <div class="flex flex-col items-center  sm:pt-0">
-          <x-listings />
+            <x-listings />
         </div>
     </div>
-     <!-- Recent -->
+    <!-- Recent -->
     <div class="bg-gray-50">
         <div class=" pt-8 flex flex-col items-center  sm:pt-0">
-          <x-recentlisting />
+            <x-recentlisting />
         </div>
     </div>
-   
+
 
 
 </x-guest-layout>
