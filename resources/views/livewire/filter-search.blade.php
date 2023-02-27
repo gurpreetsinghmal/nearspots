@@ -124,7 +124,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
 
                 @foreach ($shops_pages as $s)
-                <div onmouseover='pop({{ $s->id-1}})'>
+                <div onmouseover='pop({{$s->id-1}})'>
                     <div class="item drop-shadow-md  py-2">
                         <div class="ring-rose-700 hover:ring-1 rounded-lg ">
                             <a href="/profile/{{$s->slug_name}}">
