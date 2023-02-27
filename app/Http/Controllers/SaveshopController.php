@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
+use Faker\Guesser\Name;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -13,6 +14,12 @@ class SaveshopController extends Controller
 
   public function save(Request $request){
         $change=0;
+
+    //  required params for api
+    // localhost:8000/api/shop/save
+    // id,logo,banner,category,subcategory,address,owner,short_description
+    // website,facebook,whatsapp,instagram,twitter,linkedin,lat,lng
+
         $data=Shop::find($request->id);
         $id=$request->id;
         if($request->has('logo')){
@@ -49,7 +56,7 @@ class SaveshopController extends Controller
 
         $change=$data->save();
         if($change==1)
-        return response()->json(['message'=>'Data Uploaded Successfully'],200);
+        return response()->json(['message'=>'Data Saved Successfully'],200);
         else
         return response()->json(['message'=>'Something Went Wrong'],200);
         
@@ -57,6 +64,11 @@ class SaveshopController extends Controller
 
   public function create(Request $request){
     $change=0;
+    //  required params for api
+    //  localhost:8000/api/shop/create
+    // name
+    // city
+    // state
 
     if($request->has('name')){
       $data=new Shop();
