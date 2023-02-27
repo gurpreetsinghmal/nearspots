@@ -1,16 +1,16 @@
 <x-guest-layout>
     <div class='h-96 w-full relative flex items-center justify-center '>
-        <img class=" object-cover blur-sm md:w-full h-full " src="{{$shop->banner}}" />
+        <img class=" object-cover blur-sm md:w-full h-full " src="/{{$shop->banner}}" />
 
         <div class="absolute bg-black/50 h-full w-full">
             <div class="relative h-full flex items-center ">
                 <div class="w-4/5 mx-auto  flex flex-col md:flex-row items-top justify-center">
                     <div class="flex  justify-center items-center">
-                        <img class="m-2 p-1 ring-1 ring-white w-24 h-24 rounded-full md:rounded-lg md:w-48 md:h-48" src="{{$shop->banner}}" />
+                        <img class="m-2 p-1 ring-1 ring-white w-24 h-24 rounded-full md:rounded-lg md:w-48 md:h-48" src="/{{$shop->logo}}" />
                     </div>
                     <div class="flex-1 ml-2 mb-2">
                         <div class="pt-2">
-                            <div class="text-white md:text-5xl text-3xl ">
+                            <div class="text-white md:text-5xl text-3xl uppercase">
                                 {{$shop->name}}
                             </div>
                             <div class="mt-1 text-white md:text-2xl text-large mb-2">
@@ -52,7 +52,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                             </svg>
 
-                            <span class="ml-2 text-white text-xs md:text-xl">878-908-7654</span>
+                            <span class="ml-2 text-white text-xs md:text-xl">{{$shop->whatsapp}}</span>
                         </div>
                         <div class="flex justify-center">
                             @if($shop->website)

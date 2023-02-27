@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('shop/save',[SaveshopController::class,'save']);
+Route::post('shop/create',[SaveshopController::class,'create']);
