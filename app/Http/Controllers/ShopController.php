@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 
 
 
-class SaveshopController extends Controller
+class ShopController extends Controller
 {
 
   public function save(Request $request){
